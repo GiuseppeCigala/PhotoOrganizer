@@ -13,9 +13,9 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtGui import (
     QPixmap, QIcon, QStandardItemModel, QStandardItem, QDesktopServices,
-    QColor, QPainter, QFont, QPalette, QAction, QBrush, QImage
+    QColor, QPainter, QFont, QPalette, QAction, QBrush
 )
-from PySide6.QtCore import Qt, QUrl, QSize, QRectF
+from PySide6.QtCore import Qt, QUrl
 
 # App info
 APP_NAME = "Photo Organizer"
