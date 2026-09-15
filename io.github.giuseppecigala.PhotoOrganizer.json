@@ -1,5 +1,5 @@
 {
-    "id": "it.giuseppecigala.PhotoOrganizer",
+    "id": "io.github.giuseppecigala.PhotoOrganizer",
     "runtime": "org.kde.Platform",
     "runtime-version": "6.10",
     "sdk": "org.kde.Sdk",
@@ -17,7 +17,9 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--device=dri",
-        "--filesystem=home"
+        "--filesystem=xdg-pictures",
+        "--filesystem=xdg-documents",
+        "--filesystem=xdg-download"
     ],
     "cleanup-commands": [
         "/app/cleanup-BaseApp.sh"
@@ -32,11 +34,11 @@
                 "install -d /app/bin/resources",
                 "cp app_icon.png folder.png organize.png license.txt /app/bin/resources/",
                 "install -d /app/share/applications",
-                "install -Dm644 it.giuseppecigala.PhotoOrganizer.desktop /app/share/applications/it.giuseppecigala.PhotoOrganizer.desktop",
+                "install -Dm644 io.github.giuseppecigala.PhotoOrganizer.desktop /app/share/applications/io.github.giuseppecigala.PhotoOrganizer.desktop",
                 "install -d /app/share/metainfo",
-                "install -Dm644 it.giuseppecigala.PhotoOrganizer.metainfo.xml /app/share/metainfo/it.giuseppecigala.PhotoOrganizer.metainfo.xml",
+                "install -Dm644 io.github.giuseppecigala.PhotoOrganizer.metainfo.xml /app/share/metainfo/io.github.giuseppecigala.PhotoOrganizer.metainfo.xml",
                 "install -d /app/share/icons/hicolor/128x128/apps",
-                "install -Dm644 it.giuseppecigala.PhotoOrganizer.png /app/share/icons/hicolor/128x128/apps/it.giuseppecigala.PhotoOrganizer.png"
+                "install -Dm644 io.github.giuseppecigala.PhotoOrganizer.png /app/share/icons/hicolor/128x128/apps/io.github.giuseppecigala.PhotoOrganizer.png"
             ],
             "sources": [
                 { "type": "file", "path": "main.py" },
@@ -44,9 +46,9 @@
                 { "type": "file", "path": "resources/folder.png" },
                 { "type": "file", "path": "resources/organize.png" },
                 { "type": "file", "path": "resources/license.txt" },
-                { "type": "file", "path": "it.giuseppecigala.PhotoOrganizer.desktop" },
-                { "type": "file", "path": "it.giuseppecigala.PhotoOrganizer.metainfo.xml" },
-                { "type": "file", "path": "it.giuseppecigala.PhotoOrganizer.png" }
+                { "type": "file", "path": "io.github.giuseppecigala.PhotoOrganizer.desktop" },
+                { "type": "file", "path": "io.github.giuseppecigala.PhotoOrganizer.metainfo.xml" },
+                { "type": "file", "path": "io.github.giuseppecigala.PhotoOrganizer.png" }
             ]
         }
     ]

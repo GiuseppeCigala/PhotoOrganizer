@@ -2,7 +2,7 @@
 Name=Photo Organizer
 Comment=Organize your photos by EXIF date
 Exec=photo-organizer
-Icon=it.giuseppecigala.PhotoOrganizer
+Icon=io.github.giuseppecigala.PhotoOrganizer
 Terminal=false
 Type=Application
 Categories=Utility;Photography;
