@@ -3,7 +3,6 @@
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
 [![PySide6](https://img.shields.io/badge/PySide6-6.6%2B-green)](https://pypi.org/project/PySide6/)
-[![Flatpak](https://img.shields.io/badge/Flatpak-available-4A90D9)](https://flathub.org/)
 
 A simple cross-platform desktop application to organize your photos into folders based on their EXIF date.
 
@@ -48,22 +47,9 @@ A simple cross-platform desktop application to organize your photos into folders
 
 ---
 
-## Installation
+## Installation from source (any OS)
 
-### Linux (Flatpak) — recommended
-
-The easiest way to install Photo Organizer on Linux is via [Flathub](https://flathub.org/):
-
-```bash
-flatpak install flathub it.giuseppecigala.PhotoOrganizer
-flatpak run it.giuseppecigala.PhotoOrganizer
-```
-
-> **Note**: The Flatpak package will be available on Flathub once the submission is approved.
-
-### From source (any OS)
-
-#### Requirements
+### Requirements
 
 - Python 3.10 or newer
 - PySide6 >= 6.6.0
@@ -231,4 +217,3 @@ which is licensed under the LGPL v3.
 
 - [Qt for Python (PySide6)](https://www.qt.io/qt-for-python) — GUI framework
 - [Pillow](https://python-pillow.org/) — image processing
-- [Flathub](https://flathub.org/) — Linux app distribution
