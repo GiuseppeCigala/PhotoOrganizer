@@ -44,7 +44,8 @@ A simple cross-platform desktop application to organize your photos into folders
 ## Screenshots
 
 ![Main window](screenshot.png)
-![Folders](screenshot_1.png)
+![Folders structure](screenshot_1.png)
+
 ---
 
 ## Installation
