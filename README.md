@@ -44,9 +44,8 @@ A simple cross-platform desktop application to organize your photos into folders
 ## Screenshots
 
 ![Main window](screenshot.png)
-*The main window of Photo Organizer.*
 ![Folders structure](screenshot_1.png)
-*The folders structure at the end.*
+
 ---
 
 ## Installation
