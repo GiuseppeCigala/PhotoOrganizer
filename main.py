@@ -18,20 +18,14 @@ from PySide6.QtGui import (
 )
 from PySide6.QtCore import Qt, QUrl
 
-# App info
 APP_NAME = "Photo Organizer"
 VERSION = "1.0.0"
 AUTHOR = "Giuseppe Cigala"
 
 
 def resource_path(filename):
-    """
-    Returns the absolute path to a resource file.
-    Works both when running from source and when frozen (PyInstaller)
-    on Windows, Linux, and macOS.
-    """
+
     if getattr(sys, 'frozen', False):
-        # PyInstaller onefile: resources extracted to _MEIPASS
         base_path = getattr(sys, '_MEIPASS', os.path.dirname(sys.executable))
     else:
         base_path = os.path.dirname(os.path.abspath(__file__))
@@ -97,7 +91,6 @@ class PhotoOrganizerApp(QMainWindow):
         self.createToolsSection()
         self.main_layout.addWidget(self.tools_groupbox)
 
-        # Set initial app icon after theme is set, as get_icon_path depends on it.
         try:
             self.app_icon = QIcon(self.get_icon_path("app_icon"))
             if self.app_icon.isNull():
@@ -282,7 +275,6 @@ class PhotoOrganizerApp(QMainWindow):
         self.structure_combobox.setCurrentText("yyyy/mm/dd")
         tools_layout.addWidget(self.structure_combobox)
 
-        # Checkbox to rename files using their EXIF Date-Time
         self.rename_by_date_swt = QCheckBox("Rename by Date")
         self.rename_by_date_swt.setChecked(False)
         self.rename_by_date_swt.setToolTip(
@@ -301,7 +293,6 @@ class PhotoOrganizerApp(QMainWindow):
         self.tools_groupbox.setLayout(tools_layout)
 
     def setDarkTheme(self):
-        """Applies the dark theme (the only theme used by the application)."""
         dark_palette = QPalette()
         dark_palette.setColor(QPalette.Window, QColor(43, 43, 43))
         dark_palette.setColor(QPalette.WindowText, Qt.white)
@@ -325,13 +316,11 @@ class PhotoOrganizerApp(QMainWindow):
         self.update_button_icons()
 
     def update_button_icons(self):
-        """Updates the icons of the buttons (single icon set, no theme variants)."""
         self.select_source_btn.setIcon(QIcon(self.get_icon_path("folder")))
         self.select_destination_btn.setIcon(QIcon(self.get_icon_path("folder")))
         self.organize_photos_btn.setIcon(QIcon(self.get_icon_path("organize")))
 
     def get_icon_path(self, icon_name):
-        """Constructs the icon path. Icons are single-set (no theme suffix)."""
         return resource_path(f"{icon_name}.png")
 
     def selectSourceDirectory(self):
@@ -343,7 +332,6 @@ class PhotoOrganizerApp(QMainWindow):
 
             image_extensions = ('.png', '.jpg', '.jpeg', '.gif', '.bmp', '.tiff', '.webp')
 
-            # Always scan subdirectories (default behavior)
             for root, _, files in os.walk(self.source_directory):
                 for file_name in files:
                     if file_name.lower().endswith(image_extensions):
@@ -482,14 +470,12 @@ class PhotoOrganizerApp(QMainWindow):
                 dest_path = self.destination_directory
                 dt_obj = None
 
-                # Parse EXIF date if available (used for both subfolder and rename)
                 if photo.date_time:
                     try:
                         dt_obj = datetime.strptime(photo.date_time, "%Y:%m:%d %H:%M:%S")
                     except ValueError:
                         dt_obj = None
 
-                # Build subdirectory from EXIF date
                 if dt_obj is not None:
                     if structure_format == "yyyy":
                         sub_dir = dt_obj.strftime("%Y")
@@ -506,9 +492,7 @@ class PhotoOrganizerApp(QMainWindow):
                 original_name = os.path.basename(photo.source_path)
                 _, ext = os.path.splitext(original_name)
 
-                # Decide the destination file name
                 if rename_by_date and dt_obj is not None:
-                    # e.g. 2024-03-15_14-30-22.jpeg
                     new_base = dt_obj.strftime("%Y-%m-%d_%H-%M-%S")
                     file_name = f"{new_base}{ext}"
                 else:
@@ -516,7 +500,6 @@ class PhotoOrganizerApp(QMainWindow):
 
                 final_dest_file_path = os.path.join(dest_path, file_name)
 
-                # Avoid overwriting: append _1, _2, ... if needed
                 counter = 1
                 base_no_ext, ext_only = os.path.splitext(final_dest_file_path)
                 while os.path.exists(final_dest_file_path):
@@ -630,8 +613,6 @@ class PhotoOrganizerApp(QMainWindow):
 
 
 if __name__ == "__main__":
-    # On Linux with HiDPI displays (common on GNOME/KDE), these attributes
-    # help Qt scale the UI correctly. They are ignored on Windows and macOS.
     QApplication.setHighDpiScaleFactorRoundingPolicy(
         Qt.HighDpiScaleFactorRoundingPolicy.PassThrough
     )
