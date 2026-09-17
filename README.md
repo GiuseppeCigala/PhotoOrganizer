@@ -13,7 +13,7 @@ A simple cross-platform desktop application to organize your photos into folders
 ![Main window](screenshot.png)
 ![Folders structure](screenshot_1.png)
 ---
-## Installation from source (any OS)
+## Installation from source
 ### Requirements
 - Python 3.10 or newer
 - PySide6 >= 6.6.0
@@ -67,8 +67,6 @@ With structure `yyyy/mm/dd` and **Rename by Date** enabled, the destination will
 ## License
 Photo Organizer is free software released under the
 **GNU Lesser General Public License v3.0 or later**.
-
-See the [LICENSE](LICENSE) file for the full text.
 
 This application uses [PySide6](https://www.qt.io/qt-for-python),
 which is licensed under the LGPL v3.
