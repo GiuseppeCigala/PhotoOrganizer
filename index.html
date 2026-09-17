@@ -149,12 +149,24 @@
     </ul>
 
     <h2>Installation</h2>
-    <p>
-        The easiest way to install Photo Organizer on Linux is via Flatpak:
-    </p>
-    <pre><code>flatpak install flathub it.giuseppecigala.PhotoOrganizer</code></pre>
-    <pre><code>flatpak run it.giuseppecigala.PhotoOrganizer</code></pre>
 
+    <pre><code>   # 1. Clone the repository
+    git clone https://github.com/giuseppecigala/PhotoOrganizer.git
+    cd PhotoOrganizer
+
+    # 2. Create a virtual environment
+    python3 -m venv .venv
+
+    # 3. Activate it
+    source .venv/bin/activate      # Linux / macOS
+    # .venv\Scripts\activate       # Windows
+
+    # 4. Install dependencies
+    pip install -r requirements.txt
+
+    # 5. Run the application
+    python3 main.py</code></pre>
+  
     <h2>Requirements</h2>
     <ul>
         <li>Python 3.10 or newer (for running from source)</li>
