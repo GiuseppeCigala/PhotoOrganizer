@@ -116,7 +116,6 @@
 <body>
 
     <header>
-        <!-- Replace with your real icon if you want -->
         <img class="logo" src="io.github.giuseppecigala.PhotoOrganizer.png" alt="Photo Organizer icon">
         <h1>Photo Organizer</h1>
         <p class="tagline">Organize your photos by EXIF date</p>
@@ -134,9 +133,11 @@
         so your library stays tidy and searchable.
     </p>
 
-    <h2>Screenshot</h2>
-       <img class="screenshot" src="screenshot.png" alt="Photo Organizer main window">
-    <p class="caption">The main window of Photo Organizer.</p>
+    <h2>Screenshots</h2>
+       <img class="screenshot" src="screenshot.png" alt="Main window">
+    <p class="caption">Main window</p>
+        <img class="screenshot" src="screenshot_1.png" alt="Folders structure">
+    <p class="caption">Folders structure</p>
 
     <h2>Features</h2>
     <ul>
@@ -144,8 +145,6 @@
         <li>Organizes photos into folders by year, month, and day.</li>
         <li>Optional renaming of files using their Date &amp; Time.</li>
         <li>Recursively scans the source directory, including all subfolders.</li>
-        <li>Clean dark-themed interface built with PySide6 (Qt for Python).</li>
-        <li>Available as a Flatpak for easy installation on any Linux distribution.</li>
     </ul>
 
     <h2>Installation</h2>
@@ -158,8 +157,7 @@
     python3 -m venv .venv
 
     # 3. Activate it
-    source .venv/bin/activate      # Linux / macOS
-    # .venv\Scripts\activate       # Windows
+    source .venv/bin/activate
 
     # 4. Install dependencies
     pip install -r requirements.txt
